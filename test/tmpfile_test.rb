@@ -16,6 +16,13 @@ class HasAttachmentTest < Test::Unit::TestCase
       @image.close
     end
 
+    context "when not assigned a file" do
+      should "should return nil for tempfile" do
+        tmp = @document.image.tempfile
+        assert_equal(tmp, nil)
+      end
+    end
+
     context "when assigned a file" do
       setup do
         @document.image = @image
