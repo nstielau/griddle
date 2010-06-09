@@ -62,6 +62,14 @@ The contents of a file stored in GridFileSystem can be retrieved using `Mongo::G
     @document.image.file.read
     => contents of file
 
+Retrieve the file as a Tempfile
+
+    @document.image.tempfile.class
+    => Tempfile
+
+    @document.image.tempfile.path
+    => path of the temporary file
+
 Some other methods that may be helpful to know:
   
     # does the attachment exist?
