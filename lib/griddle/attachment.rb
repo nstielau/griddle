@@ -95,7 +95,7 @@ module Griddle
 
     def tempfile
       if exists?
-        tmp = Tempfile.new("tmp_image")
+        tmp = Tempfile.new("griddle_tmp_file")
         tmp << file.read
         tmp.close
         tmp
