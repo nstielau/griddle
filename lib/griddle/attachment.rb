@@ -92,7 +92,16 @@ module Griddle
     def grid_key
       "#{owner_type.tableize}/#{owner_id}/#{name}/#{self.file_name}".downcase
     end
-    
+
+    def tempfile
+      if exists?
+        tmp = Tempfile.new("tmp_image")
+        tmp << file.read
+        tmp.close
+        tmp
+      end
+    end
+
     def file
       @grid.open(grid_key, 'r') if exists?
     end
